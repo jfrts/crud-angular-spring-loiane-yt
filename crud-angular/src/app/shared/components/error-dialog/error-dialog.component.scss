@@ -1,0 +1,26 @@
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: flex-start;
+  padding: 2rem 4rem;
+
+  h1 {
+    color: #ff4d4d;
+    margin: 0;
+    padding: 0;
+  }
+
+  .dialog-message {
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+
+  button {
+    align-self: center;
+    color: #101010;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+}
