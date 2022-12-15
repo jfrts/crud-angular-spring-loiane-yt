@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Course } from '../model/course.interface';
 
@@ -7,20 +8,11 @@ import { Course } from '../model/course.interface';
   providedIn: 'root',
 })
 export class CourseService {
+  private readonly API_URL = '/assets/cursos.json';
+
   constructor(private httpClient: HttpClient) {}
 
-  list(): Course[] {
-    return [
-      {
-        _id: '1',
-        name: 'Crud Angular + Spring',
-        category: 'Fullstack',
-      },
-      {
-        _id: '2',
-        name: 'Angular - Loiane',
-        category: 'Frontend',
-      },
-    ];
+  list(): Observable<Course[]> {
+    return this.httpClient.get<Course[]>(this.API_URL);
   }
 }

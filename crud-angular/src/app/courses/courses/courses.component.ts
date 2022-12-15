@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Course } from './../model/course.interface';
 import { CourseService } from './../services/course.service';
@@ -9,9 +10,8 @@ import { CourseService } from './../services/course.service';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent {
-
   public displayedColumns = ['name', 'category'];
-  public courses: Course[];
+  public courses: Observable<Course[]>;
 
   constructor(private coursesService: CourseService) {
     this.courses = this.coursesService.list();
