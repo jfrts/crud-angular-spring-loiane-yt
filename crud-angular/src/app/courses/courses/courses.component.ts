@@ -11,9 +11,9 @@ import { CourseService } from './../services/course.service';
 })
 export class CoursesComponent {
   public displayedColumns = ['name', 'category'];
-  public courses: Observable<Course[]>;
+  public courses$: Observable<Course[]>;
 
   constructor(private coursesService: CourseService) {
-    this.courses = this.coursesService.list();
+    this.courses$ = this.coursesService.list();
   }
 }
